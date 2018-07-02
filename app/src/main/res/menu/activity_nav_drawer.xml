@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group >
+        <item
+            android:id="@+id/connect"
+            android:icon="@drawable/baseline_speaker_phone_black_36dp"
+            android:title="Connect with belt" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/baseline_location_on_black_36dp"
+            android:title="Recent Trips" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/baseline_record_voice_over_black_36dp"
+            android:title="Location Sharing" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/baseline_traffic_black_36dp"
+            android:title="Traffic" />
+    </group>
+
+    <item android:title="BeltiGO">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/baseline_info_black_36dp"
+                android:title="About" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/baseline_stars_black_36dp"
+                android:title="Rate this app" />
+            <item
+                android:id="@+id/signot"
+                android:title="Sign Out"
+                android:icon="@drawable/baseline_label_important_black_24dp">
+            </item>
+        </menu>
+    </item>
+
+</menu>
