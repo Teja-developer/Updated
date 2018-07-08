@@ -429,11 +429,24 @@ public class Nav extends AppCompatActivity
 
     // Get the current location
     private void getDeviceLocation() {
+    
+    /* ------------------ Using LocationManager as an example.-----------------------------  
+        replace mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this); by 
+        mLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        
+         Using GPS, requesting location updates as soon as available and even for
+         the smallest changes. Here 'this' refers to our LocationListener 
+         implementation.
+         
+        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0,
+        ---------------------------------------------------------------------------------------------*/
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
         try {
-
+                
             final com.google.android.gms.tasks.Task<Location> location = mFusedLocationProviderClient.getLastLocation();
+            
+            
             location.addOnCompleteListener(new OnCompleteListener<Location>() {
                 @Override
                 public void onComplete(@NonNull com.google.android.gms.tasks.Task<Location> task) {
@@ -684,7 +697,13 @@ public class Nav extends AppCompatActivity
                 //For updating the location
                 LocationManager mLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
                 LocationListener mLocationListener = new LocationListener() {
-                    @Override
+                   
+                         /*  Received location update must be copied from method parameter to class variable
+       
+                         */
+
+                   
+                   @Override
                     public void onLocationChanged(Location location) {
 
                         Log.d("Map", "onLocationChanged() callback received");
